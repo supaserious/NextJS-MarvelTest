@@ -1,21 +1,28 @@
-import React from 'react';
+import React from 'react'
 
-import App from 'next/app';
-import MainLayout from '../src/layouts/main-layout';
-import { ThemeProvider } from 'styled-components';
-import { mainTheme } from './../src/styles/main-theme';
+import App from 'next/app'
+import MainLayout from '../src/layouts/main-layout'
+import { ThemeProvider } from 'styled-components'
+import { mainTheme } from './../src/styles/main-theme'
 
 class MyApp extends App {
-  render() {
-    const { Component, pageProps } = this.props;
+  state = { isOpen: false }
 
+  handleToggleIsOpen = () => {
+    this.setState((prevState) => {
+      return { isOpen: !prevState.isOpen }
+    })
+  }
+
+  render() {
+    const { Component, pageProps } = this.props
     return (
       <ThemeProvider theme={mainTheme}>
-        <MainLayout>
+        <MainLayout open={this.state.isOpen} setOpen={this.handleToggleIsOpen}>
           <Component {...pageProps} />
         </MainLayout>
       </ThemeProvider>
-    );
+    )
   }
 }
-export default MyApp;
+export default MyApp

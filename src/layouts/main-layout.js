@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react'
 
 import Head from 'next/head'
 import Header from '../components/Header'
+import Sidebar from '../components/Sidebar'
 
 const MainLayout = ({ children, title = 'Default title', open, setOpen }) => (
   <>
@@ -14,6 +15,7 @@ const MainLayout = ({ children, title = 'Default title', open, setOpen }) => (
       />
     </Head>
     <Header open={open} setOpen={setOpen} />
+    <Sidebar open={open} />
     <main>{children}</main>
     <style jsx global>{`
       * {

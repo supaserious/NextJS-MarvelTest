@@ -40,6 +40,11 @@ export const MenuItem = styled.li`
     a {
       color: ${({ theme }) => theme.color.white};
       transition: 0.4s ease-in-out;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     &:hover {
@@ -67,9 +72,5 @@ export const linkStyle = {
   alignItems: 'center',
   color: '#d56b6b',
   letterSpacing: '0.25px',
-  height: '100%',
-
-  lastChild: {
-    color: '#f4f4f4'
-  }
+  height: '100%'
 }

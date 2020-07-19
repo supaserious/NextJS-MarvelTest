@@ -1,5 +1,6 @@
 export const mainTheme = {
   color: {
+    mainBG: '#464D59',
     grey: '#282c34',
     lightGrey: '#31373e',
     lightGrayOp: 'rgba(63, 70, 79, 0.8)',

@@ -19,7 +19,7 @@ class MyApp extends App {
     return (
       <ThemeProvider theme={mainTheme}>
         <MainLayout open={this.state.isOpen} setOpen={this.handleToggleIsOpen}>
-          <Component {...pageProps} />
+          <Component {...pageProps} open={this.state.isOpen} />
         </MainLayout>
       </ThemeProvider>
     )
